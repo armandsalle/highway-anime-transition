@@ -1,0 +1,23 @@
+{
+  "name": "transi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel index.html --open"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-imagemin": "^4.0.1",
+    "sass": "^1.26.10"
+  },
+  "dependencies": {
+    "@dogstudio/highway": "^2.2.1",
+    "animejs": "^3.2.0",
+    "gsap": "^3.4.0",
+    "locomotive-scroll": "^3.5.4",
+    "quicklink": "^2.0.0",
+    "utils": "^0.3.1",
+    "utils.js": "^1.0.1"
+  }
+}

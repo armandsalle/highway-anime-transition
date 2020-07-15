@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paris</title>
+    <link rel="stylesheet" href="css/style.scss" />
+  </head>
+  <body>
+    <main data-router-wrapper>
+      <div data-router-view="city" data-city="paris">
+        <div class="paris-page">
+          <div class="img-container">
+            <div class="ppp">
+              <img
+                src="img/paris.jpeg"
+                width="500"
+                height="700"
+                style="width: 100%; height: 100%; object-fit: cover;"
+              />
+            </div>
+          </div>
+          <div class="title-container">
+            <div class="title">
+              <span>paris</span>
+            </div>
+          </div>
+          <a class="home-link" href="/index.html">BACK</a>
+        </div>
+      </div>
+    </main>
+    <!-- <canvas></canvas> -->
+    <script src="index.js" id="main-script" data-no-reload></script>
+  </body>
+</html>
