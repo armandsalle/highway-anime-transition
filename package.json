@@ -4,20 +4,30 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel index.html --open"
+    "sass": "node-sass -w src/css/ -o src/css/",
+    "clean": "rimraf -rf dist",
+    "pre:serve": "yarn clean",
+    "js:build": "rollup -c",
+    "js:dev": "rollup -c -w",
+    "serve": "eleventy --serve",
+    "pre:build": "yarn clean && yarn sass && yarn js:build",
+    "build": "eleventy"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4",
-    "parcel-plugin-imagemin": "^4.0.1",
+    "@11ty/eleventy": "^0.11.0",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "babel": "^6.23.0",
+    "node-sass": "^4.14.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.21.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^6.1.0",
     "sass": "^1.26.10"
   },
   "dependencies": {
     "@dogstudio/highway": "^2.2.1",
-    "animejs": "^3.2.0",
-    "gsap": "^3.4.0",
-    "locomotive-scroll": "^3.5.4",
-    "quicklink": "^2.0.0",
-    "utils": "^0.3.1",
-    "utils.js": "^1.0.1"
+    "animejs": "^3.2.0"
   }
 }

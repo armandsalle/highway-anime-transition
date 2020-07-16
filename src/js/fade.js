@@ -1,6 +1,6 @@
 import Highway from "@dogstudio/highway";
-import anime from "animejs/lib/anime.es.js";
-import { isBack, setisBack } from "./shared";
+import anime from "animejs";
+import { isBack, setisBack } from "./shared.js";
 
 export let scrollPos = 0;
 
@@ -84,7 +84,6 @@ export class Fade extends Highway.Transition {
         delay: anime.stagger(10),
         easing: "easeInOutCirc",
         complete() {
-          console.log("rr");
           done();
         },
       });

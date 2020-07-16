@@ -1,7 +1,6 @@
 import Highway from "@dogstudio/highway";
-import anime from "animejs/lib/anime.es.js";
-import { setisBack, opt, setOpt } from "./shared";
-import { scrollPos } from "./index";
+import anime from "animejs";
+import { setisBack, opt, setOpt } from "./shared.js";
 
 export class Move extends Highway.Transition {
   in({ from, to, done, trigger }) {
@@ -19,7 +18,6 @@ export class Move extends Highway.Transition {
 
     if (e) {
       setOpt(e.getBoundingClientRect());
-      console.log(e.getBoundingClientRect());
     } else {
       setOpt(false);
     }
@@ -101,8 +99,6 @@ export class Move extends Highway.Transition {
     });
 
     if (opt.x && trigger !== "popstate") {
-      console.log(opt);
-      const img = from.querySelector(".ppp");
       const imgProp = img.getBoundingClientRect();
       const w = (opt.width * 100) / imgProp.width;
       const h = (opt.height * 100) / imgProp.height;
@@ -113,8 +109,8 @@ export class Move extends Highway.Transition {
         targets: img,
         width: `${w}%`,
         height: `${h}%`,
-        translateX: opt.x,
-        translateY: opt.y,
+        translateX: opt.x - imgProp.x,
+        translateY: opt.y - imgProp.y,
         duration: 1000 / 2,
         easing: "easeInOutCirc",
         delay: 500,
@@ -136,7 +132,7 @@ export class Move extends Highway.Transition {
       delay: 500,
       easing: "easeInOutCirc",
       complete: () => {
-        window.scroll(0, scrollPos || 0);
+        // window.scroll(0, scrollPos || 0);
         done();
       },
     });

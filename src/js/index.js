@@ -1,8 +1,7 @@
 import Highway from "@dogstudio/highway";
-import { prefetch } from "quicklink";
-import { manageScripts } from "./utils";
-import { Move } from "./move";
-import { Fade } from "./fade";
+import { manageScripts } from "./utils.js";
+import { Move } from "./move.js";
+import { Fade } from "./fade.js";
 // import anime from "animejs";
 
 // const p = {
@@ -52,9 +51,9 @@ window.H = new Highway.Core({
 });
 
 window.H.on("NAVIGATE_END", ({ to }) => {
-  prefetch({
-    el: to.view,
-  });
+  // prefetch({
+  //   el: to.view,
+  // });
 
   manageScripts(to);
 });
